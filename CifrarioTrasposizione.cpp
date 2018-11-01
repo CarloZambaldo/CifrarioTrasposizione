@@ -51,7 +51,8 @@ int main(){
 	cout<<"Inserire una frase da crittografare: ";
 	gets(frase);
 	
-	int k = strlen(frase); // ottengo la lunghezza reale della frase
+	// ottengo la lunghezza reale della frase
+	int k = strlen(frase); 
 	
 	// Inizializzo la matrice tras[5][k] con spazi
 	char tras[LK][L];
@@ -83,10 +84,38 @@ int main(){
 		cout<<endl;
 	}
 	
+	// Inizializzo la matrice crit[5][k] con spazi
+	char crit[L][LK];
+	for(int c=0; c<L; c++)
+		for(int j=0; j<LK; j++)
+			crit[c][j]=' ';
+			
+	// copio le colonne di tras nelle righe di crit: copio il trasposto di trans in crit
+	for(int c=0; c<LK; c++){ 
+		for(int z=0; z<L; z++){
+			crit[z][c]=tras[c][z];
+		}
+	}
+	
+	// Stampo la matrice tras[LK][L]
+	cout<<endl<<endl;
+	for(int c=0; c<L; c++){
+		for(int j=0; j<LK; j++)
+			cout<<crit[c][j]<<"\t";
+		cout<<endl;
+	}
+	
 	// Riordino gli elementi rispetto alla chiave nella matrice crit
-	char crit[LK][k];
-	
-	
+	i=0;
+	char max, min;
+	for(int c=0; c<L-1; c++){
+		if(crit[0][c]>crit[0][c+1]){
+			for(int j=0; j<L; j++){
+				crit[c][j]=crit[];
+				}
+				
+		}
+	}
 	
 	system("PAUSE");
 	return 0;
